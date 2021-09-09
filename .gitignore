@@ -83,7 +83,7 @@ typings/
 
 # Next.js build output
 .next
-
+artifacts
 # Nuxt.js build / generate output
 .nuxt
 dist
