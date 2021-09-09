@@ -1,5 +1,3 @@
-import { LOGIN_USERS } from '../configs/e2eConstants';
-
 import { Selector, Browser,ClientFunction } from 'testcafe';
 
 

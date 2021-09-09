@@ -1,7 +1,7 @@
 apiVersion: v1alpha
 kind: testcafe
 sauce:
-  region: us-west-1
+  region: eu-central-1
   concurrency: 1 # Controls how many suites are executed at the same time (sauce test env only).
 ## Tunnel allows you to specify an existing sauce connect tunnel when running testcafe inside the Sauce cloud.
 ## This has no effect when running tests inside docker.
@@ -16,10 +16,10 @@ sauce:
       - other tag
     build: $BUILD_ID
 suites:
-  - name: "saucy test"
+  - name: "WB test"
     browserName: "chrome" # Although Testcafe supports triggering one test in multiple browsers, it'd better here to split them into every suite to indicate each suite has its own test point.
     src:
-      - "*/*.test.js" # test files glob
+      - "./tests/*.js" # test files glob
     screenshots:
       takeOnFails: true
       fullPage: true
