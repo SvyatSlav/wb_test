@@ -59,9 +59,9 @@ jobs:
 
 workflows:
   version: 2
-  default_workflow:
+  wb_workflow:
     jobs:
-      - setup      
+      - setup
       - test-testcafe:
           requires:
             - setup
