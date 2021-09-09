@@ -9,12 +9,12 @@ jobs:
       - run:
           name: Download saucectl
           command: |
-              SAUCECTL_VERSION=0.24.2
-              SAUCECTL_BINARY=saucectl_${SAUCECTL_VERSION}_linux_64-bit.tar.gz
-              curl -L -o ${SAUCECTL_BINARY} \
-                -H "Accept: application/octet-stream" \
-                https://github.com/saucelabs/saucectl/releases/download/v${SAUCECTL_VERSION}/${SAUCECTL_BINARY} \
-                && tar -xvzf ${SAUCECTL_BINARY}
+            SAUCECTL_VERSION=0.24.2
+            SAUCECTL_BINARY=saucectl_${SAUCECTL_VERSION}_linux_64-bit.tar.gz
+            curl -L -o ${SAUCECTL_BINARY} \
+              -H "Accept: application/octet-stream" \
+              https://github.com/saucelabs/saucectl/releases/download/v${SAUCECTL_VERSION}/${SAUCECTL_BINARY} \
+              && tar -xvzf ${SAUCECTL_BINARY}
       - persist_to_workspace:
           root: ~/app
           paths:
@@ -38,7 +38,6 @@ jobs:
             BUILD_ID: $CIRCLE_BUILD_NUM
             BUILD_ENV: CircleCI
 
-
   # Testcafe Example
   test-testcafe:
     working_directory: ~/app
@@ -56,6 +55,8 @@ jobs:
             SKIP_CI: true
             BUILD_ID: $CIRCLE_BUILD_NUM
             BUILD_ENV: CircleCI
+      - store_artifacts:
+          path: ./test
 
 workflows:
   version: 2
