@@ -26,7 +26,7 @@ suites:
     screenResolution: "1600x1200"
     src:
       # test files glob
-      - "tests/*.js"
+      - "./tests/*.js"
 
 # Controls what artifacts to fetch when the suite on Sauce Cloud has finished.
 artifacts:
