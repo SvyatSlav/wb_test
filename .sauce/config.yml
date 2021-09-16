@@ -23,21 +23,6 @@ suites:
   - name: "Testcafe - Cross Browser - Swag Labs Login - Windows-Chrome"
     browserName: chrome
     platformName: "Windows 10"
-    # Available resolutions on Windows:
-    # - '800x600'
-    # - '1024x768'
-    # - '1152x864'
-    # - '1280x768'
-    # - '1280x800'
-    # - '1280x960'
-    # - '1280x1024'
-    # - '1400x1050'
-    # - '1440x900'
-    # - '1600x1200'
-    # - '1680x1050'
-    # - '1920x1080'
-    # - '1920x1200'
-    # - '2560x1600'
     screenResolution: "1600x1200"
     src:
       - "tests/*.test.js"
@@ -56,15 +41,6 @@ suites:
   - name: "Testcafe - Cross Browser - Swag Labs Login - Mac 11-Chrome"
     browserName: chrome
     platformName: "mac 11.00"
-    # Available resolutions on Mac 11:
-    # - '1024x768'
-    # - '1152x864'
-    # - '1280x960'
-    # - '1376x1032'
-    # - '1440x900'
-    # - '1600x1200'
-    # - '1920x1440'
-    # - '2048x1536'
     screenResolution: "1600x1200"
     src:
       - "tests/*.test.js"

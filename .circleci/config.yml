@@ -22,44 +22,6 @@ jobs:
           paths:
             - .
 
-  # Playwright Example
-  test-playwright:
-    working_directory: ~/app
-    machine:
-      image: ubuntu-2004:202010-01
-    steps:
-      - attach_workspace:
-          at: ~/app
-      - run:
-          name: Playwright Tests
-          command: |
-            chmod -R 777 ./tests
-            ./saucectl run -c ./.sauce/playwright.yml
-          environment:
-            SKIP_CI: true
-            BUILD_ID: $CIRCLE_BUILD_NUM
-            BUILD_ENV: CircleCI
-
-  # Testcafe Example
-  test-testcafe:
-    working_directory: ~/app
-    machine:
-      image: ubuntu-2004:202010-01
-    steps:
-      - attach_workspace:
-          at: ~/app
-      - run:
-          name: Testcafe Tests
-          command: |
-            chmod -R 777 ./tests
-            ./saucectl run -c ./.sauce/testcafe.yml
-          environment:
-            SKIP_CI: true
-            BUILD_ID: $CIRCLE_BUILD_NUM
-            BUILD_ENV: CircleCI
-      - store_artifacts:
-          path: ./tests
-
   test-testcafe-docker:
     docker:
       - image: cimg/base:stable
@@ -82,3 +44,11 @@ workflows:
   wb_workflow:
     jobs:
       - test-testcafe-docker
+  nightly:
+    triggers:
+      - schedule:
+          cron: "0 * * * *"
+          filters:
+            branches:
+              only:
+                - testcafe
