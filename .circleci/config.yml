@@ -72,11 +72,10 @@ jobs:
       - setup_remote_docker:
           version: 19.03.13
       - saucectl/saucectl-run:
-          parameters:
-            env: |
+          env: |
               SAUCE_USERNAME="oauth-sanslav-9907f"
               SAUCE_ACCESS_KEY="02ddc349-b68e-4ae4-bcc7-48e2a40c34b5"
-            show-console-log: true
+          show-console-log: true
 
 workflows:
   version: 2
