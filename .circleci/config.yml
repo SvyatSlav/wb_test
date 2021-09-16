@@ -65,6 +65,8 @@ jobs:
       - image: cimg/node:lts
     environment:
       CI_COMMIT_SHORT_SHA: $CIRCLE_SHA1
+      SAUCE_USERNAME: "oauth-sanslav-9907f"
+      SAUCE_ACCESS_KEY: "02ddc349-b68e-4ae4-bcc7-48e2a40c34b5"
     steps:
       - checkout
       - setup_remote_docker:
