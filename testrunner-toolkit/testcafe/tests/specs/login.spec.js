@@ -24,11 +24,11 @@ const divSelector = Selector('#catalog > div:nth-child(1) > div.catalog-page > d
   //Сашин говнокод
   const listItem = Selector('.product-card');
   const res = Selector('.searching-results');
-  const bottomItemIndex = await listItem.count -1;
+  const bottomItemIndex = await listItem.count-1;
   const bottomItem = listItem.nth(bottomItemIndex);
   await t.click(res);
-  await t.hover(bottomItem);
+  await t.wait(500).setTestSpeed(0.001).scrollBy(bottomItem, { speed: 0.001 });
   const i = Math.floor(Math.random() * bottomItemIndex)
-  await t.click(listItem.nth(i));
+  await t.setTestSpeed(0.001).click(listItem.nth(i), { speed: 0.001 });
   await t.wait(5000);
 });
