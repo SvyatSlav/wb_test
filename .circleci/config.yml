@@ -62,7 +62,7 @@ jobs:
 
   test-testcafe-docker:
     docker:
-      - image: circleci/node
+      - image: cimg/node:16.8.0
     environment:
       CI_COMMIT_SHORT_SHA: $CIRCLE_SHA1
       SAUCE_USERNAME: "oauth-sanslav-9907f"
