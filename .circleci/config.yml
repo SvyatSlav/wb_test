@@ -1,4 +1,6 @@
 version: 2.1
+orbs:
+  saucectl: saucelabs/saucectl-run@1.0.0
 jobs:
   setup:
     working_directory: ~/app
@@ -58,11 +60,22 @@ jobs:
       - store_artifacts:
           path: ./tests
 
+  test-testcafe-docker:
+    docker:
+      - image: cimg/node:lts
+    environment:
+      CI_COMMIT_SHORT_SHA: $CIRCLE_SHA1
+    steps:
+      - checkout
+      - setup_remote_docker:
+          version: 19.03.13
+      - saucectl/saucectl-run
+
 workflows:
   version: 2
   wb_workflow:
     jobs:
       - setup
-      - test-testcafe:
+      - test-testcafe-docker:
           requires:
             - setup
