@@ -81,6 +81,4 @@ workflows:
   version: 2
   wb_workflow:
     jobs:
-      - test-testcafe-docker:
-          requires:
-            - setup
+      - test-testcafe-docker
