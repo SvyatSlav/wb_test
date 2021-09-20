@@ -26,8 +26,8 @@ const divSelector = Selector('#catalog > div:nth-child(1) > div.catalog-page > d
   const bottomItemIndex = await listItem.count-1;
   const bottomItem = listItem.nth(bottomItemIndex);
   await t.click(res);
-  await t.wait(500).setTestSpeed(0.01).scrollBy(bottomItem, { speed: 0.01 });
+  await t.hover(bottomItem);
   const i = Math.floor(Math.random() * bottomItemIndex)
-  await t.setTestSpeed(0.01).click(listItem.nth(i), { speed: 0.01 });
+  await t.click(listItem.nth(i));
   await t.wait(5000);
 });
