@@ -5,6 +5,8 @@ defaults:
 sauce:
   region: eu-central-1
   concurrency: 2 # Controls how many suites are executed at the same time.
+  tunnel:
+    id: oauth-sanslav-9907f_tunnel_id	
   metadata:
     name: saucectl testcafe example
     tags:
