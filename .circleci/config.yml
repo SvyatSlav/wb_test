@@ -44,14 +44,14 @@ workflows:
   wb_workflow:
     jobs:
       - test-testcafe-docker
-  # everyhour:
-  #   triggers:
-  #     - schedule:
-  #         cron: "0 * * * *"
-  #         filters:
-  #           branches:
-  #             only:
-  #               - testcafe
-  #   jobs:
-  #     - test-testcafe-docker
+  everyhour:
+    triggers:
+      - schedule:
+          cron: "0 * * * *"
+          filters:
+            branches:
+              only:
+                - testcafe
+    jobs:
+      - test-testcafe-docker
 
