@@ -47,7 +47,7 @@ workflows:
   every15:
     triggers:
       - schedule:
-          cron: "*/15 * * * *"
+          cron: "*/15  * * * *"
           filters:
             branches:
               only:
