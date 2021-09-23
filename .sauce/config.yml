@@ -6,7 +6,7 @@ sauce:
   region: eu-central-1
   concurrency: 1 # Controls how many suites are executed at the same time.
   tunnel:
-    id: oauth-sanslav-9907f_tunnel_id
+    id: oauth-sanslav-9907f_sven
   metadata:
     name: saucectl testcafe WB
     tags:
