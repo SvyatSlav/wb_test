@@ -9,7 +9,7 @@ test('get myip page', async t => {
 
 
 fixture`MyIP IP`
-  .page(`https://www.whatismyip.com/my-ip-information/`);
+  .page(`https://www.myip.com/`);
 
 test('get myip page', async t => {
   await t.wait(5000);
