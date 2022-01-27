@@ -5,7 +5,7 @@ fixture`Test Input`
   .page(`https://www.wildberries.ru/`)
 ;
 
-test('should be able to test loading of login page', async t => {
+test('zont testing', async t => {
   const developerNameInput = Selector('body > div.wrapper > header > div > div.header__bottom > div.header__search-catalog.search-catalog.j-search-catalog > div.search-catalog__block > input', { timeout: 5000 });
   await t
     //.expect(developerNameInput.value).eql('-Я ищу...', 'input is empty')
@@ -30,6 +30,7 @@ const divSelector = Selector('#catalog > div:nth-child(1) > div.catalog-page > d
   await t.wait(5000);
 });
 
+/*
 test('scarfs testing', async t => {
   const developerNameInput = Selector('body > div.wrapper > header > div > div.header__bottom > div.header__search-catalog.search-catalog.j-search-catalog > div.search-catalog__block > input', { timeout: 5000 });
   await t
@@ -79,3 +80,4 @@ const divSelector = Selector('#catalog > div:nth-child(1) > div.catalog-page > d
   await t.setTestSpeed(0.01).click(listItem.nth(i)).setTestSpeed(0.01);
   await t.wait(5000);
 });
+*/
