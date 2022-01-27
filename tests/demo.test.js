@@ -19,7 +19,7 @@ const divSelector = Selector('#catalog > div:nth-child(1) > div.catalog-page > d
   await t.wait(10000).expect(divSelector.exists).ok({timeout:5000});
 
   //выбор карточки рандом
-  const listItem = Selector('.product-card');
+  const listItem = Selector('.product-card').withAttribute('data-card-index');
   const res = Selector('.searching-results');
   const bottomItemIndex = await listItem.count-1;
   const bottomItem = listItem.nth(bottomItemIndex);
@@ -44,7 +44,7 @@ const divSelector = Selector('#catalog > div:nth-child(1) > div.catalog-page > d
   await t.wait(10000).expect(divSelector.exists).ok({timeout:5000});
 
   //выбор карточки рандом
-  const listItem = Selector('.product-card');
+  const listItem = Selector('.product-card').withAttribute('data-card-index');
   const res = Selector('.searching-results');
   const bottomItemIndex = await listItem.count-1;
   const bottomItem = listItem.nth(bottomItemIndex);
@@ -69,7 +69,7 @@ const divSelector = Selector('#catalog > div:nth-child(1) > div.catalog-page > d
   await t.wait(10000).expect(divSelector.exists).ok({timeout:5000});
 
   //выбор карточки рандом
-  const listItem = Selector('.product-card');
+  const listItem = Selector('.product-card').withAttribute('data-card-index');
   const res = Selector('.searching-results');
   const bottomItemIndex = await listItem.count-1;
   const bottomItem = listItem.nth(bottomItemIndex);
